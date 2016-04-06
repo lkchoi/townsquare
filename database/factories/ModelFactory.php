@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -10,12 +12,12 @@
 | database. Just tell the factory how a default model should look.
 |
 */
-
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Article::class, function(Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
-        'remember_token' => str_random(10),
+        'title' => Str::title($faker->words(5, true)),
+        'author' => $faker->name(),
+        'subheader' => $faker->sentence(),
+        'abstract' => $faker->paragraph(),
+        'content' => $faker->paragraphs(10, true),
     ];
 });

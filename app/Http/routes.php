@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { return view('welcome'); });
+
+Route::resource('articles', 'ArticlesController');
+
+Route::group(['prefix' => '/api/v1/'], function() {
+    Route::resource('articles', 'ArticlesController');
 });

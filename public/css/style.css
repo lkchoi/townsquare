@@ -1,0 +1,16 @@
+body {
+    padding-top: 50px;
+}
+.starter-template {
+    padding: 40px 15px;
+}
+article a.title {
+    font-size: 1.5em;
+    color: #000!important;
+}
+article .byline {
+    margin-bottom: 1em;
+}
+article {
+    margin-bottom: 1.5em;
+}
